@@ -8,7 +8,7 @@ Author: Ahmed Kaludi, Mohammed Kaludi
 Author URI: http://ampforwp.com/
 License: GPL2
 */
-
+// new comment
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) exit;
 
