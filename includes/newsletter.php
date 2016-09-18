@@ -1,5 +1,5 @@
 <?php
-class ampwp_pointers1 {
+class ampforwp_pointers {
 	const DISPLAY_VERSION = 'v1.0';
 	function __construct () {
 		add_action('admin_enqueue_scripts', array($this, 'admin_enqueue_scripts'));
@@ -35,8 +35,8 @@ class ampwp_pointers1 {
 			$file_error = true;
 			
 			$id = '#dashboard_right_now';  // Define ID used on page html element where we want to display pointer
-			$content = '<h3>' . sprintf (__('You are awesome for using AMP!', 'ampwp'), self::DISPLAY_VERSION) . '</h3>';
-			$content .= __('<p>Do you want the latest on <b>AMP update</b> before others and some best resources on AMP in a single email? - Free just for users of AMP!</p>', 'ampwp');
+			$content = '<h3>' . sprintf (__('You are awesome for using AMP!', 'ampforwp'), self::DISPLAY_VERSION) . '</h3>';
+			$content .= __('<p>Do you want the latest on <b>AMP update</b> before others and some best resources on AMP in a single email? - Free just for users of AMP!</p>', 'ampforwp');
             $content .= __('
             <!-- Begin MailChimp Signup Form -->
             <style type="text/css">
@@ -58,14 +58,14 @@ class ampwp_pointers1 {
 	            		<input type="submit" value="Sure, Thanks!" name="subscribe" id="pointer-close" class="button mc-newsletter-sent" style=" background: #0085ba; border-color: #006799; padding: 0px 16px; text-shadow: 0 -1px 1px #006799,1px 0 1px #006799,0 1px 1px #006799,-1px 0 1px #006799; height: 30px; margin-top: 1px; color: #fff; box-shadow: 0 1px 0 #006799;">
             		</div>
             	</form>
-            </div>','ampwp');
+            </div>','ampforwp');
 			$options = array (
 				'content' => $content,
 				'position' => array ('edge' => 'top', 'align' => 'left')
 				);
 		}
 		if ($show_pointer) {
-			$this->make_pointer_script ($id, $options, __('Dismiss', 'ampwp'), $button2, $function);
+			$this->ampforwp_pointer_script ($id, $options, __('Dismiss', 'ampforwp'), $button2, $function);
 		}
 	}
 	function get_admin_url($page, $tab) {
@@ -73,7 +73,7 @@ class ampwp_pointers1 {
 		$url .= $page.'?tab='.$tab;
 		return $url;
 	}
-	function make_pointer_script ($id, $options, $button1, $button2=false, $function='') {
+	function ampforwp_pointer_script ($id, $options, $button1, $button2=false, $function='') {
 		?>
 		<script type="text/javascript">
 			(function ($) {
@@ -119,5 +119,5 @@ class ampwp_pointers1 {
  	<?php
 	}
 }
-$ampwp_pointers1 = new ampwp_pointers1();
+$ampforwp_pointers = new ampforwp_pointers();
 ?>
