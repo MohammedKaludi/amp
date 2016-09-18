@@ -107,7 +107,7 @@
 	add_action('amp_post_template_head','ampforwp_register_additional_scripts');
 	function ampforwp_register_additional_scripts() {  
 		global $redux_builder_amp; ?> 
-
+    <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
 		<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
 		<?php if( $redux_builder_amp['enable-single-social-icons'] == true )  { ?>
       		<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
@@ -316,49 +316,5 @@ function ampforwp_google_analytics() {  ?>
 	</amp-analytics>
 	<?php 
 }
-
-
-
-
-
-// function add_rewrite_rules( $wp_rewrite )
-// {
-// $new_rules = array(
-// 'blog/page/(.+?)/?$' => 'index.php?post_type=post&paged='. $wp_rewrite->preg_index(1),
-// 'blog/(.+?)/amp/?$' => 'index.php?amp=1&post_type=post&name='. $wp_rewrite->preg_index(1),
-
-// );
-
-// $wp_rewrite->rules = $new_rules + $wp_rewrite->rules;
-// }
-// add_action('generate_rewrite_rules', 'add_rewrite_rules');
-
-
-
-// function change_blog_links($post_link, $id=0){
-
-// $post = get_post($id);
-
-// if( is_object($post) && $post->post_type == 'post'){
-// return home_url('/blog/'. $post->post_name.'/');
-// }
-
-// return $post_link;
-// }
-// add_filter('post_link', 'change_blog_links', 1, 3);
-
-
-
-// add_filter('next_post_link', 'ampforwp_post_link_attributes');
-// add_filter('previous_post_link', 'ampforwp_post_link_attributes');
- 
-// function ampforwp_post_link_attributes($output) {
-//     $code = 'class="styled-button"';
-
-//     $basoutput  = $output . '/amp';
-//     return  $basoutput;
-// }
-
-
 
 ?> 

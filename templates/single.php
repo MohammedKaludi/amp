@@ -11,7 +11,7 @@
 	<?php do_action( 'amp_post_template_css', $this ); ?>
 	</style>
 </head>
-<body>
+<body class="single-post">
 <?php $this->load_parts( array( 'header-bar' ) ); ?>
 
 <?php do_action( 'ampforwp_after_header', $this ); ?>
@@ -32,7 +32,7 @@
 		<h1 class="amp-wp-title"><?php echo wp_kses_data( $this->get( 'post_title' ) ); ?></h1>
 	</div>
 
-	<div class="amp-wp-content">
+	<div class="amp-wp-content the_content">
 		<?php do_action( 'ampforwp_before_post_content', $this ); ?>
 		
 		<?php echo $this->get( 'post_amp_content' ); // amphtml content; no kses ?>
